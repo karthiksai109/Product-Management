@@ -74,7 +74,7 @@ const placeOrder = async function (req, res) {
     console.log(y)
    createOrder['items']=y
 
-        return res.status(201).send({ status: true, message: "Success", data: createOrder });
+        return res.status(200).send({ status: true, message: "Success", data: createOrder });
     } catch (err) {
         return res.status(500).send({ status: false, message: err.message });
     }
