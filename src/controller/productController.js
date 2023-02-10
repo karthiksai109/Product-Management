@@ -7,7 +7,6 @@ const { uploadFile } = require("../middleware/aws")
 let createProduct = async function (req, res) {
 
     try {
-
         let data = req.body;
 
         //if keys were undefined then in case:
@@ -29,7 +28,7 @@ let createProduct = async function (req, res) {
         if (!isValidString(title)) { return res.status(400).send({ status: false, message: "Enter valid title." }) }
         title = title.toLowerCase()
 
-        const Check_Title = await productModel.findOne({ title: title , isDeleted:false})
+        const Check_Title = await productModel.findOne({ title: title.toLowerCase(), isDeleted:false})
         if (Check_Title) { return res.status(404).send({ status: false, message: "title already exists. Please enter unique title." }) }
 
         if (!description) return res.status(400).send({ status: false, message: "description is mandatory." })

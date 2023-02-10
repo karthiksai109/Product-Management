@@ -224,7 +224,7 @@ try {
                 }
                 if (x.quantity == 0) {
                     Arrayitems.splice(i, 1)
-                    totalItems = 0
+                    totalItems = totalItems-1
                 }
             }
         })

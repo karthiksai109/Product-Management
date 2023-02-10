@@ -7,8 +7,12 @@ const validateName = (name) => {
 
 //====================================== Email Regex Validation =======================================//
 const validateEmail = (email) => {
-    return (/^[a-z0-9](\.?[a-z0-9]){3,}@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/.test(email));
+
+    let regex= /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+    
+    if (regex.test(email)) return true
 }
+    
 
 //==================================== Number Regex Validation ======================================//
 const validateMobileNo = (Number) => {
